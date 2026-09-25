@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def say_hello():
-    return ('<p>Hello, World, I am a Flask app!</p>'
+    return ('<p>Welcome!</p>'
             '<p><a href="/about">About this app</a></p>'
             '<p><a href="/contact">Contact</a></p>')
 

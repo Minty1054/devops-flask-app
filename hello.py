@@ -14,6 +14,7 @@ def say_hello():
 def about():
     return ('<p>This application is running on the Flask web framework.</p>'
             '<p>Learn more about Flask: <a href="https://flask.palletsprojects.com/">https://flask.palletsprojects.com/</a></p>'
+            '<p>Learn more about Python: <a href=https://www.python.org/">https://www.python.org/</a></p>'
             '<p><a href="/">Back to home</a></p>')
 
 

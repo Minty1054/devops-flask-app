@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: flaskapp
+  template:
+    metadata:
+      labels:
+        app: flaskapp
+    spec:
+      containers:
+        - name: flaskapp-container
+          image: my_flask_image
+          imagePullPolicy: Never
+          env:
+            # Point the app at the Redis service (Compose used "redis-server")
+            - name: REDIS_HOST
+              value: the-redis-server

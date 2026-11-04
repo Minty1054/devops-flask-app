@@ -6,7 +6,8 @@ Intro to DevOps - a minimal Flask web app used for the labs.
 |------|------------|
 | `hello.py` | The Flask app (routes: `/`, `/about`, `/contact`) |
 | `Dockerfile` | Lab 5: builds a container image that serves the app on port 5000 |
-| `requirements.txt` | Python packages the app needs (Flask) |
+| `requirements.txt` | Python packages the app needs (Flask, Redis) |
+| `compose.yaml` | Lab 6: runs the Flask app and a Redis cache in separate containers |
 | `setup.sh` | Lab 1 script: installs packages on Ubuntu Server, creates a venv, installs Flask and runs the app |
 
 ## Run it
@@ -25,6 +26,16 @@ Then open http://localhost:5000
 ```
 docker buildx build -t my_flask_image .
 docker run -p 8080:5000 --name my_flask_container my_flask_image
+```
+
+Then open http://localhost:8080
+
+## Run it with Docker Compose (Lab 6)
+
+Each route caches its HTML in Redis for 10 minutes.
+
+```
+docker compose up --build
 ```
 
 Then open http://localhost:8080
